@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="BancoTrabModelStoreContainer" CdmEntityContainer="BancoTrabEntities1">
+    <EntitySetMapping Name="Eventoes">
+      <EntityTypeMapping TypeName="BancoTrabModel.Evento">
+        <MappingFragment StoreEntitySet="Evento">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="evento1" ColumnName="evento" />
+          <ScalarProperty Name="listaLote" ColumnName="listaLote" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lotes">
+      <EntityTypeMapping TypeName="BancoTrabModel.Lote">
+        <MappingFragment StoreEntitySet="Lote">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="ingresso" ColumnName="ingresso" />
+          <ScalarProperty Name="tipoingresso" ColumnName="tipoingresso" />
+          <ScalarProperty Name="valoringresso" ColumnName="valoringresso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operadors">
+      <EntityTypeMapping TypeName="BancoTrabModel.Operador">
+        <MappingFragment StoreEntitySet="Operador">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome_" ColumnName="nome " />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaidaIngressos">
+      <EntityTypeMapping TypeName="BancoTrabModel.SaidaIngresso">
+        <MappingFragment StoreEntitySet="SaidaIngressos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+          <ScalarProperty Name="valorvenda" ColumnName="valorvenda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="BancoTrabModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_SaidaIngressos_Evento" TypeName="BancoTrabModel.FK_SaidaIngressos_Evento" StoreEntitySet="SaidaIngressos">
+      <EndProperty Name="Evento">
+        <ScalarProperty Name="Id" ColumnName="evento_id" />
+      </EndProperty>
+      <EndProperty Name="SaidaIngressos">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="evento_id" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_SaidaIngressos_Operador" TypeName="BancoTrabModel.FK_SaidaIngressos_Operador" StoreEntitySet="SaidaIngressos">
+      <EndProperty Name="Operador">
+        <ScalarProperty Name="Id" ColumnName="operador_id" />
+      </EndProperty>
+      <EndProperty Name="SaidaIngressos">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="operador_id" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

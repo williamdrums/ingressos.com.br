@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS" Space="C-S">
+  <Alias Key="Model" Value="TrabalhoTati" />
+  <Alias Key="Target" Value="TrabalhoTati.Store" />
+  <EntityContainerMapping CdmEntityContainer="TrabalhoTatiContainer" StorageEntityContainer="TrabalhoTatiTargetContainer" />
+</Mapping>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrabalhoGerenciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Evento" Type="varchar" MaxLength="1" />
+    <Property Name="lote" Type="varchar" MaxLength="1" />
+    <Property Name="data" Type="varchar" MaxLength="1" />
+    <Property Name="hora" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Lote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="numero" Type="int" />
+    <Property Name="ingresso" Type="int" />
+    <Property Name="tipoingresso" Type="varchar" MaxLength="50" />
+    <Property Name="valoringresso" Type="money" />
+  </EntityType>
+  <EntityType Name="Operador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="50" />
+    <Property Name="permissao" Type="varchar" MaxLength="50" />
+    <Property Name="telefone" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="saidaingressos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="operador_id" Type="int" />
+    <Property Name="evento_id" Type="int" />
+    <Property Name="quantidade" Type="int" />
+    <Property Name="valor" Type="money" />
+  </EntityType>
+  <Association Name="FK_saidaingressos_operador">
+    <End Role="Operador" Type="Self.Operador" Multiplicity="0..1" />
+    <End Role="saidaingressos" Type="Self.saidaingressos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="saidaingressos">
+        <PropertyRef Name="operador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TrabalhoGerenciaModelStoreContainer">
+    <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lote" EntityType="Self.Lote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operador" EntityType="Self.Operador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="saidaingressos" EntityType="Self.saidaingressos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_saidaingressos_operador" Association="Self.FK_saidaingressos_operador">
+      <End Role="Operador" EntitySet="Operador" />
+      <End Role="saidaingressos" EntitySet="saidaingressos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrabalhoGerenciaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="evento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="listLote" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="saidaingressos" Relationship="Self.FK_saidaingressos_evento" FromRole="Evento" ToRole="saidaingressos" />
+    <Property Name="hora" Type="String" Unicode="false" FixedLength="false" MaxLength="1" />
+    <NavigationProperty Name="Lote" Relationship="TrabalhoGerenciaModel.EventoLote" FromRole="Evento" ToRole="Lote" />
+    <Property Name="lote" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Lote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="numero" Type="Int32" />
+    <Property Name="ingresso" Type="Int32" />
+    <Property Name="tipoingresso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valoringresso" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Evento" Relationship="TrabalhoGerenciaModel.EventoLote" FromRole="Lote" ToRole="Evento" />
+  </EntityType>
+  <EntityType Name="Operador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefone" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="saidaingressos" Relationship="Self.FK_saidaingressos_operador" FromRole="Operador" ToRole="saidaingressos" />
+    <Property Name="permissao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="saidaingressos1" Relationship="TrabalhoGerenciaModel.FK_saidaingressos_operador1" FromRole="Operador" ToRole="saidaingressos" />
+  </EntityType>
+  <EntityType Name="saidaingressos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="quantidade" Type="Int32" />
+    <Property Name="valor" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Evento" Relationship="Self.FK_saidaingressos_evento" FromRole="saidaingressos" ToRole="Evento" />
+    <NavigationProperty Name="Operador" Relationship="Self.FK_saidaingressos_operador" FromRole="saidaingressos" ToRole="Operador" />
+    <Property Name="evento_id" Type="Int32" />
+    <NavigationProperty Name="Operador1" Relationship="TrabalhoGerenciaModel.FK_saidaingressos_operador1" FromRole="saidaingressos" ToRole="Operador" />
+  </EntityType>
+  <Association Name="FK_saidaingressos_evento">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="0..1" />
+    <End Role="saidaingressos" Type="Self.saidaingressos" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_saidaingressos_operador">
+    <End Role="Operador" Type="Self.Operador" Multiplicity="0..1" />
+    <End Role="saidaingressos" Type="Self.saidaingressos" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="TrabalhoGerenciaEntities1">
+    <EntitySet Name="Evento" EntityType="Self.Evento" />
+    <EntitySet Name="Lote" EntityType="Self.Lote" />
+    <EntitySet Name="Operador" EntityType="Self.Operador" />
+    <EntitySet Name="saidaingressos" EntityType="Self.saidaingressos" />
+    <AssociationSet Name="FK_saidaingressos_evento" Association="Self.FK_saidaingressos_evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="saidaingressos" EntitySet="saidaingressos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_saidaingressos_operador" Association="Self.FK_saidaingressos_operador">
+      <End Role="Operador" EntitySet="Operador" />
+      <End Role="saidaingressos" EntitySet="saidaingressos" />
+    </AssociationSet>
+    <AssociationSet Name="EventoLote" Association="TrabalhoGerenciaModel.EventoLote">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Lote" EntitySet="Lote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_saidaingressos_operador1" Association="TrabalhoGerenciaModel.FK_saidaingressos_operador1">
+      <End Role="Operador" EntitySet="Operador" />
+      <End Role="saidaingressos" EntitySet="saidaingressos" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="EventoLote">
+    <End Type="TrabalhoGerenciaModel.Evento" Role="Evento" Multiplicity="1" />
+    <End Type="TrabalhoGerenciaModel.Lote" Role="Lote" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_saidaingressos_operador1">
+    <End Type="TrabalhoGerenciaModel.Operador" Role="Operador" Multiplicity="0..1" />
+    <End Type="TrabalhoGerenciaModel.saidaingressos" Role="saidaingressos" Multiplicity="*" />
+  </Association>
+</Schema>

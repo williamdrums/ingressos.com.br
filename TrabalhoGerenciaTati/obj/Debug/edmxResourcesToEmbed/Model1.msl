@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="TrabalhoGerenciaModelStoreContainer" CdmEntityContainer="TrabalhoGerenciaEntities1">
+    <EntitySetMapping Name="Evento">
+      <EntityTypeMapping TypeName="IsTypeOf(TrabalhoGerenciaModel.Evento)">
+        <MappingFragment StoreEntitySet="Evento">
+          <ScalarProperty Name="lote" ColumnName="lote" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lote">
+      <EntityTypeMapping TypeName="IsTypeOf(TrabalhoGerenciaModel.Lote)">
+        <MappingFragment StoreEntitySet="Lote">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="ingresso" ColumnName="ingresso" />
+          <ScalarProperty Name="tipoingresso" ColumnName="tipoingresso" />
+          <ScalarProperty Name="valoringresso" ColumnName="valoringresso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Operador">
+      <EntityTypeMapping TypeName="IsTypeOf(TrabalhoGerenciaModel.Operador)">
+        <MappingFragment StoreEntitySet="Operador">
+          <ScalarProperty Name="permissao" ColumnName="permissao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saidaingressos">
+      <EntityTypeMapping TypeName="IsTypeOf(TrabalhoGerenciaModel.saidaingressos)">
+        <MappingFragment StoreEntitySet="saidaingressos">
+          <ScalarProperty Name="evento_id" ColumnName="evento_id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_saidaingressos_evento" TypeName="TrabalhoGerenciaModel.FK_saidaingressos_evento" StoreEntitySet="saidaingressos">
+      <EndProperty Name="saidaingressos">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_saidaingressos_operador" TypeName="TrabalhoGerenciaModel.FK_saidaingressos_operador" StoreEntitySet="saidaingressos">
+      <EndProperty Name="saidaingressos">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EventoLote" TypeName="TrabalhoGerenciaModel.EventoLote" StoreEntitySet="Lote">
+      <EndProperty Name="Lote">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_saidaingressos_operador1" TypeName="TrabalhoGerenciaModel.FK_saidaingressos_operador1" StoreEntitySet="saidaingressos">
+      <EndProperty Name="saidaingressos">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <EndProperty Name="Operador">
+        <ScalarProperty Name="Id" ColumnName="operador_id" />
+      </EndProperty>
+      <Condition ColumnName="operador_id" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
