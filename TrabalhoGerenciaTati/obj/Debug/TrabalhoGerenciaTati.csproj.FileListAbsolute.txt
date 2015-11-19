@@ -7,3 +7,4 @@ C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\obj\Debug\T
 C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\bin\TrabalhoGerenciaTati.dll
 C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\bin\TrabalhoGerenciaTati.pdb
 C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\obj\Debug\TrabalhoGerenciaTati.pdb
+C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\obj\Debug\TrabalhoGerenciaTati.csprojResolveAssemblyReference.cache

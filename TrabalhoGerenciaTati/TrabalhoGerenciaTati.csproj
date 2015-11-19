@@ -60,6 +60,7 @@
     <Content Include="App_Data\BancoTrab_log.ldf">
       <DependentUpon>BancoTrab.mdf</DependentUpon>
     </Content>
+    <Content Include="cadastroUsuario.aspx" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -77,10 +78,17 @@
     <Content Include="Evento.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Banco.Designer.cs">
+    <Compile Include="BancoModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Banco.edmx</DependentUpon>
+      <DependentUpon>BancoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroUsuario.aspx.cs">
+      <DependentUpon>cadastroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cadastroUsuario.aspx.designer.cs">
+      <DependentUpon>cadastroUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -106,13 +114,12 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <EntityDeploy Include="Banco.edmx">
+    <EntityDeploy Include="BancoModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Banco.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Banco</CustomToolNamespace>
+      <LastGenOutput>BancoModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Banco.edmx.diagram">
-      <DependentUpon>Banco.edmx</DependentUpon>
+    <Content Include="BancoModel.edmx.diagram">
+      <DependentUpon>BancoModel.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

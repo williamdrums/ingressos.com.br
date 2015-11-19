@@ -9,7 +9,9 @@
 <body>
     <form id="Evento" runat="server">
     <div>
+        <asp:TextBox ID="TxtEvento" runat="server" Text="Nome Evento" />
         
+
         <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar"/>
     </div>
     </form>
