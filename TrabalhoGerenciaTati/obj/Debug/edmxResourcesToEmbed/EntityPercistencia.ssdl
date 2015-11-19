@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BancoTrabModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+<Schema Namespace="BancoTrabModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="BancoTrabModelStoreContainer">
+    <EntitySet Name="Evento" EntityType="BancoTrabModel.Store.Evento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Lote" EntityType="BancoTrabModel.Store.Lote" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Operador" EntityType="BancoTrabModel.Store.Operador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SaidaIngressos" EntityType="BancoTrabModel.Store.SaidaIngressos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="BancoTrabModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_SaidaIngressos_Evento" Association="BancoTrabModel.Store.FK_SaidaIngressos_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="SaidaIngressos" EntitySet="SaidaIngressos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaidaIngressos_Operador" Association="BancoTrabModel.Store.FK_SaidaIngressos_Operador">
+      <End Role="Operador" EntitySet="Operador" />
+      <End Role="SaidaIngressos" EntitySet="SaidaIngressos" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Evento">
     <Key>
       <PropertyRef Name="Id" />
@@ -48,8 +63,8 @@
     <Property Name="senha" Type="varchar" MaxLength="32" />
   </EntityType>
   <Association Name="FK_SaidaIngressos_Evento">
-    <End Role="Evento" Type="Self.Evento" Multiplicity="0..1" />
-    <End Role="SaidaIngressos" Type="Self.SaidaIngressos" Multiplicity="*" />
+    <End Role="Evento" Type="BancoTrabModel.Store.Evento" Multiplicity="0..1" />
+    <End Role="SaidaIngressos" Type="BancoTrabModel.Store.SaidaIngressos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Evento">
         <PropertyRef Name="Id" />
@@ -60,8 +75,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SaidaIngressos_Operador">
-    <End Role="Operador" Type="Self.Operador" Multiplicity="0..1" />
-    <End Role="SaidaIngressos" Type="Self.SaidaIngressos" Multiplicity="*" />
+    <End Role="Operador" Type="BancoTrabModel.Store.Operador" Multiplicity="0..1" />
+    <End Role="SaidaIngressos" Type="BancoTrabModel.Store.SaidaIngressos" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Operador">
         <PropertyRef Name="Id" />
@@ -71,19 +86,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BancoTrabModelStoreContainer">
-    <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Lote" EntityType="Self.Lote" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Operador" EntityType="Self.Operador" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SaidaIngressos" EntityType="Self.SaidaIngressos" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_SaidaIngressos_Evento" Association="Self.FK_SaidaIngressos_Evento">
-      <End Role="Evento" EntitySet="Evento" />
-      <End Role="SaidaIngressos" EntitySet="SaidaIngressos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SaidaIngressos_Operador" Association="Self.FK_SaidaIngressos_Operador">
-      <End Role="Operador" EntitySet="Operador" />
-      <End Role="SaidaIngressos" EntitySet="SaidaIngressos" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

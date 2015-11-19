@@ -3,3 +3,7 @@ C:\Users\Diosefer\documents\visual studio 2013\Projects\TrabalhoGerenciaTati\Tra
 C:\Users\Diosefer\documents\visual studio 2013\Projects\TrabalhoGerenciaTati\TrabalhoGerenciaTati\bin\TrabalhoGerenciaTati.pdb
 C:\Users\Diosefer\documents\visual studio 2013\Projects\TrabalhoGerenciaTati\TrabalhoGerenciaTati\obj\Debug\TrabalhoGerenciaTati.dll
 C:\Users\Diosefer\documents\visual studio 2013\Projects\TrabalhoGerenciaTati\TrabalhoGerenciaTati\obj\Debug\TrabalhoGerenciaTati.pdb
+C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\obj\Debug\TrabalhoGerenciaTati.dll
+C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\bin\TrabalhoGerenciaTati.dll
+C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\bin\TrabalhoGerenciaTati.pdb
+C:\Users\Usuario\Desktop\crudsAngular\ingressos\TrabalhoGerenciaTati\obj\Debug\TrabalhoGerenciaTati.pdb

@@ -19,7 +19,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="numero" Type="Int32" />
     <Property Name="ingresso" Type="Int32" />
-    <Property Name="tipoingresso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoIngresso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="valoringresso" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="Evento" Relationship="BancoTrabModel.EventoLote" FromRole="Lote" ToRole="Evento" />
   </EntityType>

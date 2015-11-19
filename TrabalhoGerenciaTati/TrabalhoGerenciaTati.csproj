@@ -77,18 +77,17 @@
     <Content Include="Evento.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Banco.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="entidade.cs" />
-    <Compile Include="EntityPercistencia.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityPercistencia.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Evento.aspx.cs">
@@ -107,12 +106,13 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <EntityDeploy Include="EntityPercistencia.edmx">
+    <EntityDeploy Include="Banco.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntityPercistencia.Designer.cs</LastGenOutput>
+      <LastGenOutput>Banco.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Banco</CustomToolNamespace>
     </EntityDeploy>
-    <Content Include="EntityPercistencia.edmx.diagram">
-      <DependentUpon>EntityPercistencia.edmx</DependentUpon>
+    <Content Include="Banco.edmx.diagram">
+      <DependentUpon>Banco.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

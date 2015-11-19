@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="798a42c2b822444696c0852e0f6aa7eb" Name="Diagram1">
+        <EntityTypeShape EntityType="BancoTrabModel.Evento" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoTrabModel.Lote" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoTrabModel.Operador" Width="1.5" PointX="5.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoTrabModel.SaidaIngressos" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoTrabModel.Usuario" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="BancoTrabModel.FK_Lote_Evento" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoTrabModel.FK_SaidaIngressos_Evento" ManuallyRouted="false" />
+        <AssociationConnector Association="BancoTrabModel.FK_SaidaIngressos_Operador" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

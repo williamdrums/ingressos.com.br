@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="TrabalhoGerenciaTati.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Evento.aspx.cs" Inherits="TrabalhoGerenciaTati.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -9,8 +9,9 @@
 <body>
     <form id="Evento" runat="server">
     <div>
+        
         <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar"/>
     </div>
     </form>
-</body
+</body>
 </html>

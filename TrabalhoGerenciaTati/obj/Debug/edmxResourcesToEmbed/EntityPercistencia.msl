@@ -18,7 +18,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="numero" ColumnName="numero" />
           <ScalarProperty Name="ingresso" ColumnName="ingresso" />
-          <ScalarProperty Name="tipoingresso" ColumnName="tipoingresso" />
+          <ScalarProperty Name="tipoIngresso" ColumnName="tipoingresso" />
           <ScalarProperty Name="valoringresso" ColumnName="valoringresso" />
         </MappingFragment>
       </EntityTypeMapping>
