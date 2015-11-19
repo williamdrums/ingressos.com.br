@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoTrabModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="BancoTrabModelStoreContainer">
+    <EntitySet Name="Evento" EntityType="BancoTrabModel.Store.Evento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Lote" EntityType="BancoTrabModel.Store.Lote" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Operador" EntityType="BancoTrabModel.Store.Operador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SaidaIngressos" EntityType="BancoTrabModel.Store.SaidaIngressos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="BancoTrabModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Lote_Evento" Association="BancoTrabModel.Store.FK_Lote_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Lote" EntitySet="Lote" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaidaIngressos_Evento" Association="BancoTrabModel.Store.FK_SaidaIngressos_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="SaidaIngressos" EntitySet="SaidaIngressos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaidaIngressos_Operador" Association="BancoTrabModel.Store.FK_SaidaIngressos_Operador">
+      <End Role="Operador" EntitySet="Operador" />
+      <End Role="SaidaIngressos" EntitySet="SaidaIngressos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="evento" Type="varchar" MaxLength="50" />
+    <Property Name="listaLote" Type="varchar" MaxLength="50" />
+    <Property Name="data" Type="varchar" MaxLength="50" />
+    <Property Name="hora" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Lote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="numero" Type="int" />
+    <Property Name="ingresso" Type="int" />
+    <Property Name="tipoingresso" Type="varchar" MaxLength="50" />
+    <Property Name="valoringresso" Type="money" />
+    <Property Name="Evento" Type="int" />
+  </EntityType>
+  <EntityType Name="Operador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="nome " Type="varchar" MaxLength="50" />
+    <Property Name="telefone" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="SaidaIngressos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="operador_id" Type="int" />
+    <Property Name="evento_id" Type="int" />
+    <Property Name="quantidade" Type="int" />
+    <Property Name="valorvenda" Type="money" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" />
+    <Property Name="senha" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <Association Name="FK_Lote_Evento">
+    <End Role="Evento" Type="BancoTrabModel.Store.Evento" Multiplicity="0..1" />
+    <End Role="Lote" Type="BancoTrabModel.Store.Lote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lote">
+        <PropertyRef Name="Evento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaidaIngressos_Evento">
+    <End Role="Evento" Type="BancoTrabModel.Store.Evento" Multiplicity="0..1" />
+    <End Role="SaidaIngressos" Type="BancoTrabModel.Store.SaidaIngressos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaidaIngressos">
+        <PropertyRef Name="evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaidaIngressos_Operador">
+    <End Role="Operador" Type="BancoTrabModel.Store.Operador" Multiplicity="0..1" />
+    <End Role="SaidaIngressos" Type="BancoTrabModel.Store.SaidaIngressos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaidaIngressos">
+        <PropertyRef Name="operador_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -9,41 +9,41 @@
 //------------------------------------------------------------------------------
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BancoTrabModel", "FK_Lote_Evento", "Evento", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Banco.Evento), "Lote", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Banco.Lote))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BancoTrabModel", "FK_SaidaIngressos_Evento", "Evento", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Banco.Evento), "SaidaIngressos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Banco.SaidaIngressos))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BancoTrabModel", "FK_SaidaIngressos_Operador", "Operador", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Banco.Operador), "SaidaIngressos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Banco.SaidaIngressos))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BancoTrabModel", "FK_Lote_Evento", "Evento", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TrabalhoGerenciaTati.Evento), "Lote", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TrabalhoGerenciaTati.Lote))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BancoTrabModel", "FK_SaidaIngressos_Evento", "Evento", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TrabalhoGerenciaTati.Evento), "SaidaIngressos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TrabalhoGerenciaTati.SaidaIngressos))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BancoTrabModel", "FK_SaidaIngressos_Operador", "Operador", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(TrabalhoGerenciaTati.Operador), "SaidaIngressos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(TrabalhoGerenciaTati.SaidaIngressos))]
 
 // Original file name:
-// Generation date: 19/11/2015 20:04:15
-namespace Banco
+// Generation date: 19/11/2015 20:30:35
+namespace TrabalhoGerenciaTati
 {
     
     /// <summary>
-    /// There are no comments for BancoTrabEntities2 in the schema.
+    /// There are no comments for BancoTrabEntities3 in the schema.
     /// </summary>
-    public partial class BancoTrabEntities2 : global::System.Data.Objects.ObjectContext
+    public partial class BancoTrabEntities3 : global::System.Data.Objects.ObjectContext
     {
         /// <summary>
-        /// Initializes a new BancoTrabEntities2 object using the connection string found in the 'BancoTrabEntities2' section of the application configuration file.
+        /// Initializes a new BancoTrabEntities3 object using the connection string found in the 'BancoTrabEntities3' section of the application configuration file.
         /// </summary>
-        public BancoTrabEntities2() : 
-                base("name=BancoTrabEntities2", "BancoTrabEntities2")
+        public BancoTrabEntities3() : 
+                base("name=BancoTrabEntities3", "BancoTrabEntities3")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new BancoTrabEntities2 object.
+        /// Initialize a new BancoTrabEntities3 object.
         /// </summary>
-        public BancoTrabEntities2(string connectionString) : 
-                base(connectionString, "BancoTrabEntities2")
+        public BancoTrabEntities3(string connectionString) : 
+                base(connectionString, "BancoTrabEntities3")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new BancoTrabEntities2 object.
+        /// Initialize a new BancoTrabEntities3 object.
         /// </summary>
-        public BancoTrabEntities2(global::System.Data.EntityClient.EntityConnection connection) : 
-                base(connection, "BancoTrabEntities2")
+        public BancoTrabEntities3(global::System.Data.EntityClient.EntityConnection connection) : 
+                base(connection, "BancoTrabEntities3")
         {
             this.OnContextCreated();
         }

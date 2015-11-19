@@ -113,7 +113,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BancoTrabModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-        <EntityContainer Name="BancoTrabEntities2">
+        <EntityContainer Name="BancoTrabEntities3">
           <EntitySet Name="Evento" EntityType="BancoTrabModel.Evento" />
           <EntitySet Name="Lote" EntityType="BancoTrabModel.Lote" />
           <EntitySet Name="Operador" EntityType="BancoTrabModel.Operador" />
@@ -200,7 +200,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
-        <EntityContainerMapping StorageEntityContainer="BancoTrabModelStoreContainer" CdmEntityContainer="BancoTrabEntities2">
+        <EntityContainerMapping StorageEntityContainer="BancoTrabModelStoreContainer" CdmEntityContainer="BancoTrabEntities3">
           <EntitySetMapping Name="Evento">
             <EntityTypeMapping TypeName="BancoTrabModel.Evento">
               <MappingFragment StoreEntitySet="Evento">

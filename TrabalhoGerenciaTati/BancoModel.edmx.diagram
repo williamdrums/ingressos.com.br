@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="798a42c2b822444696c0852e0f6aa7eb" Name="Diagram1">
+      <Diagram DiagramId="2b225812edc74f2e8765c4f53270a735" Name="Diagram1">
         <EntityTypeShape EntityType="BancoTrabModel.Evento" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BancoTrabModel.Lote" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BancoTrabModel.Operador" Width="1.5" PointX="5.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoTrabModel.Operador" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BancoTrabModel.SaidaIngressos" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BancoTrabModel.Usuario" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BancoTrabModel.Usuario" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="BancoTrabModel.FK_Lote_Evento" ManuallyRouted="false" />
         <AssociationConnector Association="BancoTrabModel.FK_SaidaIngressos_Evento" ManuallyRouted="false" />
         <AssociationConnector Association="BancoTrabModel.FK_SaidaIngressos_Operador" ManuallyRouted="false" />
